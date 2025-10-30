@@ -23,7 +23,7 @@ stompit.connect(connectOptions, (error: Error | null, client: any) => {
   console.log("✅ Connected to Artemis via STOMP");
 
   const subscribeHeaders: SubscribeHeaders = {
-    destination: process.env.DESTINATION as string,
+    destination: process.env.RECEIVER as string,
     ack: "auto",
   };
 

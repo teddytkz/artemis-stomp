@@ -15,10 +15,32 @@ const connectOptionsForSender: ConnectOptions = {
 };
 
 const payload: Payload = {
-  type: "order",
-  order_id: "ORD-123456",
-  status: "pending",
-  timestamp: new Date().toISOString(),
+  object: "whatsapp_business_account",
+  entry: [
+    {
+      id: "12345678",
+      changes: [
+        {
+          value: {
+            messaging_product: "whatsapp",
+            metadata: {
+              display_phone_number: "<BUSINESS_DISPLAY_PHONE_NUMBER>",
+              phone_number_id: "<BUSINESS_PHONE_NUMBER_ID>",
+            },
+            automatic_events: [
+              {
+                id: "987654321",
+                event_name: "LeadSubmitted",
+                timestamp: Date.now(),
+                ctwa_clid: "click_id_123",
+              },
+            ],
+          },
+          field: "automatic_events",
+        },
+      ],
+    },
+  ],
 };
 
 function sendMessage(

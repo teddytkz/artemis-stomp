@@ -21,10 +21,26 @@ export interface SendHeaders {
 }
 
 export interface Payload {
-  type: string;
-  order_id: string;
-  status: string;
-  timestamp: string;
+  object: string;
+  entry: Array<{
+    id: string;
+    changes: Array<{
+      value: {
+        messaging_product: string;
+        metadata: {
+          display_phone_number: string;
+          phone_number_id: string;
+        };
+        automatic_events: Array<{
+          id: string;
+          event_name: string;
+          timestamp: number;
+          ctwa_clid: string;
+        }>;
+      };
+      field: string;
+    }>;
+  }>;
 }
 
 export interface CallbackResult {
