@@ -173,12 +173,12 @@ The application supports two configuration methods:
 ### 2. Environment File (.env)
 
 ```env
-HOST=10.0.7.106           # Artemis broker IP
+HOST=127.0.0.1           # Artemis broker IP
 PORT=61616               # STOMP port (usually 61613 or 61616)
 LOGIN=admin              # Username
-PASSWORD=JAtis123!@#     # Password
-DESTINATION=webhook.validator    # Default send queue
-RECEIVER=automatic.events        # Default receive queue
+PASSWORD=admin     # Password
+DESTINATION=destination    # Default send queue
+RECEIVER=receiver        # Default receive queue
 ```
 
 ## 🚀 Distribution
